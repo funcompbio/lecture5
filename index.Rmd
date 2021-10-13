@@ -1,6 +1,6 @@
 ---
   title: "Programming with Python (2)"
-  author: Robert Castelo
+  author: Robert Castelo & Ricard Argelaguet
   output:
     xaringan::moon_reader:
       nature:
@@ -24,8 +24,9 @@ class: title-slide, middle, center
 
 # Programming with Python (2)
 
-## Robert Castelo
+## Robert Castelo & Ricard Argelaguet
 [robert.castelo@upf.edu](mailto:robert.castelo@upf.edu)
+[ricard.argelaguet@babraham.ac.uk](mailto:ricard.argelaguet@babraham.ac.uk)
 ### Dept. of Experimental and Health Sciences
 ### Universitat Pompeu Fabra
 
@@ -250,72 +251,72 @@ print("there are %d dinucleotides TT" %(n))
 
 ## Functions
 
-A function is a block of organised, *reusable* code that encode a certain algorithm
-<pre>
-<font style="color: darkblue; font-weight: bold">def</font> sum(a, b):
-  &nbsp;&nbsp;c=a+b
-  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
-</pre>  
-
-<pre>
->>> sum(3, 4)
-7
-</pre>
-
-<pre>
-<font style="color: darkblue; font-weight: bold">def</font> subtract(a, b):
-  &nbsp;&nbsp;c=a-b
-  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
-</pre>  
-
-<pre>
->>> subtract(3, 4)
--1
-</pre>
-
----
-
-## Functions
-
-Functions can be more complex...
-<pre>
-<font style="color: darkblue; font-weight: bold">def</font> mean(v):
-  &nbsp; c = 0
-  &nbsp; i = len(v)-1
-  &nbsp; while i>=0:
-  &nbsp;&nbsp; c = c + v[i]
-  &nbsp;&nbsp; i = i - 1
-  &nbsp; mean = c / len(v)
-  &nbsp; <font style="color: darkblue; font-weight: bold">return</font> mean
-</pre>
-
-<pre>
->>> mean([1,2,3])
-2.0
-</pre>
+* A function is a block of organised, *reusable* code that encode a certain algorithm
+  <pre>
+  <font style="color: darkblue; font-weight: bold">def</font> sum(a, b):
+    &nbsp;&nbsp;c=a+b
+    &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
+  </pre>  
+  &nbsp;&nbsp;
+  <pre>
+  >>> sum(3, 4)
+  7
+  </pre>
+  &nbsp;&nbsp;
+  <pre>
+  <font style="color: darkblue; font-weight: bold">def</font> subtract(a, b):
+    &nbsp;&nbsp;c=a-b
+    &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
+  </pre>  
+  &nbsp;&nbsp;
+  <pre>
+  >>> subtract(3, 4)
+  -1
+  </pre>
 
 ---
 
 ## Functions
 
-Functions can be more complex...
-<pre>
-<font style="color: darkblue; font-weight: bold">def</font> Fibonacci(n):
-  &nbsp;&nbsp; if n < 0:
-  &nbsp;&nbsp;&nbsp;&nbsp;  print("Incorrect input")
-  &nbsp;&nbsp; elif n == 0:
-  &nbsp;&nbsp;&nbsp;&nbsp; return 0
-  &nbsp;&nbsp; elif n == 1 or n == 2:
-  &nbsp;&nbsp;&nbsp;&nbsp; return 1
-  &nbsp;&nbsp; else:
-  &nbsp;&nbsp;&nbsp;&nbsp; result = Fibonacci(n-1) + Fibonacci(n-2)
-  &nbsp;&nbsp;&nbsp;&nbsp; <font style="color: darkblue; font-weight: bold">return</font> result
-</pre>
+* Functions can be more complex...
+  <pre>
+  <font style="color: darkblue; font-weight: bold">def</font> mean(v):
+    &nbsp; c = 0
+    &nbsp; i = len(v)-1
+    &nbsp; while i>=0:
+    &nbsp;&nbsp; c = c + v[i]
+    &nbsp;&nbsp; i = i - 1
+    &nbsp; mean = c / len(v)
+    &nbsp; <font style="color: darkblue; font-weight: bold">return</font> mean
+  </pre>
+  &nbsp;&nbsp;
+  <pre>
+  >>> mean([1,2,3])
+  2.0
+  </pre>
 
-<pre>
->>> Fibonacci(9)
-34
-</pre>
+---
+
+## Functions
+
+* Functions can be more complex...
+  <pre>
+  <font style="color: darkblue; font-weight: bold">def</font> Fibonacci(n):
+    &nbsp;&nbsp; if n < 0:
+    &nbsp;&nbsp;&nbsp;&nbsp;  print("Incorrect input")
+    &nbsp;&nbsp; elif n == 0:
+    &nbsp;&nbsp;&nbsp;&nbsp; return 0
+    &nbsp;&nbsp; elif n == 1 or n == 2:
+    &nbsp;&nbsp;&nbsp;&nbsp; return 1
+    &nbsp;&nbsp; else:
+    &nbsp;&nbsp;&nbsp;&nbsp; result = Fibonacci(n-1) + Fibonacci(n-2)
+    &nbsp;&nbsp;&nbsp;&nbsp; <font style="color: darkblue; font-weight: bold">return</font> result
+  </pre>
+  &nbsp&nbsp;
+  <pre>
+  >>> Fibonacci(9)
+  34
+  </pre>
 
 ---
 
@@ -323,59 +324,56 @@ Functions can be more complex...
 
 There are two main ways in which you can run a Python program:
 
-* From the Unix shell command line.
-<pre>
->>> python script.py
-</pre>
+1. From the Unix shell command line.
+  <pre>
+  >>> python script.py
+  </pre>
+2. Interactively, through the Python shell interpreter.
+  ![:scale 90%](img/python_interpreter.jpg)
 
-* Interactively, through the Python shell interpreter.
-
-![:scale 90%](img/python_interpreter.jpg)
 ---
 
 ## Modules
 
-You can import a module (also called a library) following any of the following syntax:
-<pre>
->>> import [module_name]
->>> import [module_name] as [alias]
->>> from [module_name] import [entity_name]
-</pre>
+* You can import a module (also called a library) following any of the following syntax:
+  <pre>
+  >>> import [module_name]
+  >>> import [module_name] as [alias]
+  >>> from [module_name] import [entity_name]
+  </pre>
+* For example, to use the `sqrt` function from the `math` package
+  <pre>
+  >>> import math
+  >>> math.sqrt(3)
+  3.0
+  </pre>
 
-For example, to use the `sqrt` function from the `math` package
-<pre>
->>> import math
->>> math.sqrt(3)
-3.0
-</pre>
+  <pre>
+  >>> import math as m
+  >>> m.sqrt(3)
+  3.0
+  </pre>
 
-<pre>
->>> import math as m
->>> m.sqrt(3)
-3.0
-</pre>
-
-<pre>
->>> from math import sqrt
->>> sqrt(3)
-3.0
-</pre>
+  <pre>
+  >>> from math import sqrt
+  >>> sqrt(3)
+  3.0
+  </pre>
 
 ---
 
 ## Packages (or libraries)
 
-Modules that provide classes and functions to be reused, but that are not
+* Modules that provide classes and functions to be reused, but that are not
   supposed to be run as standalone applications are called _libraries_ or
   [_packages_](https://docs.python.org/3/tutorial/modules.html#packages).  
   &nbsp;&nbsp;
-  
-Commonly used Python packages:
-* `matplotlib`: for plotting
-* `math`: for mathematical operations
-* `numpy`: scientific computation
-* `sys`: system-specific parameters and functions
-* `pandas`: data analysis and manipulation
+* Commonly used Python packages:
+  * `matplotlib`: for plotting.
+  * `math`: for mathematical operations.
+  * `numpy`: scientific computation.
+  * `sys`: system-specific parameters and functions.
+  * `pandas`: data analysis and manipulation.
 
 ---
 
@@ -395,39 +393,37 @@ plt.plot(x, np.cos(x), '--');
 
 ## Create your own module
 
-To create a module just save your code in a file with the file extension .py:
-
-For example, let's save a greeting function in a file named `mymodule.py`:
-
-<pre>
-def greeting(name):
-  print("Bona tarda senyor/a, " + name)
-</pre>
-
-Now we can load the module we just created from the Python terminal, by using the `import` statement:
-
-<pre>
->>> import mymodule
->>> mymodule.greeting("Xavi")
-Bona tarda senyor/a Xavi
-</pre>
+* To create a module just save your code in a file with the file extension .py  
+  &nbsp;&nbsp;
+* For example, let's save a greeting function in a file named `mymodule.py`:
+  <pre>
+  def greeting(name):
+    print("Bona tarda senyor/a, " + name)
+  </pre>
+* Now we can load the module we just created from the Python terminal, by using
+  the `import` statement:
+  <pre>
+  >>> import mymodule
+  >>> mymodule.greeting("Xavi")
+  Bona tarda senyor/a Xavi
+  </pre>
 
 ---
 
 
 ## Concluding remarks (functions, modules and packages)
 
-* We can make our Python code more modular by defining **functions**
-
+* We can make our Python code more modular by defining **functions**.  
+  &nbsp;&nbsp;
 * Python code developed for a particular purpose can be bundled
-  together into **modules**
-  
-* A Python file `.py` can be imported as a module
-
+  together into **modules**.  
+  &nbsp;&nbsp;
+* A Python file `.py` can be imported as a module.  
+  &nbsp;&nbsp;
 * Modules that provide classes and functions to be reused, but that are not
   supposed to be run as standalone applications are called 
-  **packages** or **libraries**
-  
+  **packages** or **libraries**.
+
 ---
 
 ## The numpy Python library 
@@ -453,44 +449,41 @@ Bona tarda senyor/a Xavi
 
 * A numpy array is a sequence of values of the same type, i.e., similar to
   the Python built-in `list` type but constraining the values to the same type.  
-  
+  &nbsp;&nbsp;
 * There are
   [multiple ways](https://numpy.org/doc/stable/user/basics.creation.html#arrays-creation)
   to create numpy arrays, here are some of them:
-  
-Create an array with predefined values:
-<pre>
->>> v = np.array([1, 2, 3, 4, 5])
->>> type(v)
-&lt;class 'numpy.ndarray'&gt;
->>> v
-array([1, 2, 3, 4, 5])
-</pre>
+  * Create an array with predefined values:
+    <pre>
+    >>> v = np.array([1, 2, 3, 4, 5])
+    >>> type(v)
+    &lt;class 'numpy.ndarray'&gt;
+    >>> v
+    array([1, 2, 3, 4, 5])
+    </pre>
+  * Create an array of zeros:
+    <pre>
+    >>> x = np.zeros(10) ## 10 zeroes
+    >>> x
+    array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+    </pre>
 
-Create an array of zeros:
-<pre>
->>> x = np.zeros(10) ## 10 zeroes
->>> x
-array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
-</pre>
-  
 ---
 
 ## Numeric vectors (1-d arrays) with numpy
 
-Create a consecutive range of values:
-<pre>
->>> x = np.arange(10)
->>> x
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</pre>
-
-Create a consecutive range of values (with a step):
-<pre>
->>> x = np.arange(0, 1.1, 0.1)
->>> x
-array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
-</pre>
+* Create a consecutive range of values:
+  <pre>
+  >>> x = np.arange(10)
+  >>> x
+  array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  </pre>
+* Create a consecutive range of values (with a step):
+  <pre>
+  >>> x = np.arange(0, 1.1, 0.1)
+  >>> x
+  array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
+  </pre>
 
 ---
 
@@ -510,7 +503,6 @@ The numpy library provides _vectorized_ operations over arrays. For example, let
   >>> v
   array([ 0.,  1.,  2.,  3.,  4.,  5.])
   </pre>
-  
 * This is the vectorized operation with numpy:
   <pre>
   >>> v = x * 10
