@@ -78,13 +78,12 @@ Image adapted from [Comp 101 Arrays: Overview](https://comp101.org/topics/arrays
   v[i]
   v[i-1]
   </pre>
-* Vectors are containers for sequences of values contiguous in memory.  
-  &nbsp;&nbsp;
+<!-- * Vectors are containers for sequences of values contiguous in memory.   -->
 * Vectors in programming are analogous to vectors in
   [mathematics and physics](https://en.wikipedia.org/wiki/Vector_%28mathematics_and_physics%29).  
   &nbsp;&nbsp;
-* Filling up vectors with values enables re-using algorithms that operate
-  on the vector space. This requires looping over valid positions of a vector.
+<!-- * Filling up vectors with values enables re-using algorithms that operate -->
+<!--   on the vector space. This requires looping over valid positions of a vector. -->
 
 ---
 
@@ -249,168 +248,194 @@ print("there are %d dinucleotides TT" %(n))
 
 ---
 
-## Extending data types through Python classes
+## Functions
 
-* You can extend the available data types by using so-called
-  [_object classes_](https://docs.python.org/3/tutorial/classes.html).  
-  &nbsp;&nbsp;
-* Let's define a new _point_ data type:
-  <pre>
-  <font style="color: darkblue; font-weight: bold">class</font> Point:
-  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">def</font> __init__(self, x, y):
-      &nbsp;&nbsp;self.x = x
-      &nbsp;&nbsp;self.y = y
-  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">def</font> __repr__(self):
-      &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> "(%.1f, %.1f)" %(self.x, self.y)
-  </pre>
-* We can now use this new _point_ data type in our Python code:
-  <pre>
-  >>> pt = Point(3, 4)
-  >>> pt
-  (3.0, 4.0)
-  </pre>
-* This is part of the so-called
-  [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming)
-  paradigm based on the concepts of
-  [abstraction](https://en.wikipedia.org/wiki/Abstraction_%28computer_science%29),
-  [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_%28computer_programming%29),
-  [inheritance](https://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29)
-  and
-  [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29).
+A function is a block of organised, *reusable* code that encode a certain algorithm
+<pre>
+<font style="color: darkblue; font-weight: bold">def</font> sum(a, b):
+  &nbsp;&nbsp;c=a+b
+  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
+</pre>  
+
+<pre>
+>>> sum(3, 4)
+7
+</pre>
+
+<pre>
+<font style="color: darkblue; font-weight: bold">def</font> subtract(a, b):
+  &nbsp;&nbsp;c=a-b
+  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
+</pre>  
+
+<pre>
+>>> subtract(3, 4)
+-1
+</pre>
 
 ---
 
-## Bundling lines together into functions
+## Functions
 
-* Programming instructions performing a specific task, such as the calculation
-  of a particular value or decision, can be bundled together under a so-called
-  [function](https://en.wikipedia.org/wiki/Subroutine).  
-  &nbsp;&nbsp;
-* Functions may take input arguments and may return output values.  
-  &nbsp;&nbsp;
-* A [Python function](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
-  is defined as follows:
-  <pre>
-  <font style="color: darkblue; font-weight: bold">def</font> edist(pt1, pt2):
-    &nbsp;&nbsp;dx=pt1.x-pt2.x ## distance of 'x' between pt1 and pt2
-    &nbsp;&nbsp;dy=pt1.y-pt2.y ## distance of 'y' between pt1 and pt2
-    &nbsp;&nbsp;## the Euclidean distance between pt1 and pt2 is
-    &nbsp;&nbsp;## the square root of the sum of squares of the distances
-    &nbsp;&nbsp;ed = (dx**2+dy**2)**0.5
-    &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> ed
-  </pre>
-  which we can call then as follows:
-  <pre>
-  >>> pt2 = Point(5, 7)
-  >>> edist(pt, pt2)
-  3.605551275463989
-  </pre>
+Functions can be more complex...
+<pre>
+<font style="color: darkblue; font-weight: bold">def</font> mean(v):
+  &nbsp; c = 0
+  &nbsp; i = len(v)-1
+  &nbsp; while i>=0:
+  &nbsp;&nbsp; c = c + v[i]
+  &nbsp;&nbsp; i = i - 1
+  &nbsp; mean = c / len(v)
+  &nbsp; <font style="color: darkblue; font-weight: bold">return</font> mean
+</pre>
+
+<pre>
+>>> mean([1,2,3])
+2.0
+</pre>
 
 ---
 
-## Organizing code into modules
+## Functions
 
-* A [Python module](https://docs.python.org/3/tutorial/modules.html) is a `.py`
-  file containing code to be reused in other Python files.  
-  &nbsp;&nbsp;
-* For instance, let's say we store in a file called `point.py` the previous code:
-  <pre>
-  <font style="color: darkblue; font-weight: bold">class</font> Point:
-  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">def</font> __init__(self, x, y):
-      &nbsp;&nbsp;self.x = x
-      &nbsp;&nbsp;self.y = y
-  &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">def</font> __repr__(self):
-      &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> "(%d, %d)" %(self.x, self.y)
-  &nbsp;
-  <font style="color: darkblue; font-weight: bold">def</font> edist(pt1, pt2):
-    &nbsp;&nbsp;dx=pt1.x-pt2.x ## distance of 'x' between pt1 and pt2
-    &nbsp;&nbsp;dy=pt1.y-pt2.y ## distance of 'y' between pt1 and pt2
-    &nbsp;&nbsp;## the Euclidean distance between pt1 and pt2 is
-    &nbsp;&nbsp;## the square root of the sum of squares of the distances
-    &nbsp;&nbsp;ed = (dx**2+dy**2)**0.5
-    &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> ed
-  </pre>
+Functions can be more complex...
+<pre>
+<font style="color: darkblue; font-weight: bold">def</font> Fibonacci(n):
+  &nbsp;&nbsp; if n < 0:
+  &nbsp;&nbsp;&nbsp;&nbsp;  print("Incorrect input")
+  &nbsp;&nbsp; elif n == 0:
+  &nbsp;&nbsp;&nbsp;&nbsp; return 0
+  &nbsp;&nbsp; elif n == 1 or n == 2:
+  &nbsp;&nbsp;&nbsp;&nbsp; return 1
+  &nbsp;&nbsp; else:
+  &nbsp;&nbsp;&nbsp;&nbsp; result = Fibonacci(n-1) + Fibonacci(n-2)
+  &nbsp;&nbsp;&nbsp;&nbsp; <font style="color: darkblue; font-weight: bold">return</font> result
+</pre>
+
+<pre>
+>>> Fibonacci(9)
+34
+</pre>
 
 ---
 
-## Organizing code into modules
+## How to execute Python code?
 
-* The previous file `point.py` can be reused as a _module_ as follows:
-  <pre>
-  >>> import point as pt
-  >>> pt1 = pt.Point(1.7, 2.8)
-  >>> pt2 = pt.Point(3.2, 2.1)
-  >>> pt.edist(pt1, pt2)
-  1.6552945357246849
-  </pre>
-* The `import` statement is loading the code of the `point.py` file
-and storing it under the prefix `pt`.  
-  &nbsp;&nbsp;
-* Modules can reuse other modules and while it is not mandatory, it is
-  considered a good practice to place all the `import` statements at the
-  beginning of a file.  
-  &nbsp;&nbsp;
-* It is also possible to bypass the use of a prefix using `from` _module_
-  `import *`:
-  <pre>
-  >>> from point import *
-  >>> pt = Point(1.7, 2.8)
-  >>> pt
-  (1.7, 2.8)
-  </pre>
+There are two main ways in which you can run a Python program:
+
+* From the Unix shell command line.
+<pre>
+>>> python script.py
+</pre>
+
+* Interactively, through the Python shell interpreter.
+
+![:scale 90%](img/python_interpreter.jpg)
+---
+
+## Modules
+
+You can import a module (also called a library) following any of the following syntax:
+<pre>
+>>> import [module_name]
+>>> import [module_name] as [alias]
+>>> from [module_name] import [entity_name]
+</pre>
+
+For example, to use the `sqrt` function from the `math` package
+<pre>
+>>> import math
+>>> math.sqrt(3)
+3.0
+</pre>
+
+<pre>
+>>> import math as m
+>>> m.sqrt(3)
+3.0
+</pre>
+
+<pre>
+>>> from math import sqrt
+>>> sqrt(3)
+3.0
+</pre>
 
 ---
 
-## Run modules from the Unix command line
+## Packages (or libraries)
 
-* From the prefix we can find out the module's name invoking the global variable
-`__name__` as follows:
-  <pre>
-  >>> pt.__name__
-  'point'
-  </pre>
-* If we add the following code to the **end** of our module `point.py`:
-  <pre>
-  if __name__ == "__main__" :
-    &nbsp;&nbsp;import sys ## for reading command-line arguments
-    &nbsp;&nbsp;pt1 = Point(float(sys.argv[1]), float(sys.argv[2]))
-    &nbsp;&nbsp;pt2 = Point(float(sys.argv[3]), float(sys.argv[4]))
-    &nbsp;&nbsp;ed = edist(pt1, pt2)
-    &nbsp;&nbsp;print(ed)
-  </pre>
-* We can run the previous Python module from the Unix command line as follows:
-  <pre>
-   $ python point.py 1.7 2.8 3.2 2.1
-1.65529453572
-  </pre>
-
----
-
-## Concluding remarks (classes, functions, modules)
-
-* We can make our Python code more modular by defining _functions_.  
-  &nbsp;&nbsp;
-* Python built-in data types can be extended by defining new _classes_
-  of objects.  
-  &nbsp;&nbsp;
-* Python code developed for a particular purpose can be bundled
-  together into _modules_.  
-  &nbsp;&nbsp;
-* A Python file `.py` that can be imported as a module can be also
-  called from the Unix command line.
-
----
-
-## The numpy Python library
-
-* Modules that provide classes and functions to be reused, but that are not
+Modules that provide classes and functions to be reused, but that are not
   supposed to be run as standalone applications are called _libraries_ or
   [_packages_](https://docs.python.org/3/tutorial/modules.html#packages).  
   &nbsp;&nbsp;
+  
+Commonly used Python packages:
+* `matplotlib`: for plotting
+* `math`: for mathematical operations
+* `numpy`: scientific computation
+* `sys`: system-specific parameters and functions
+* `pandas`: data analysis and manipulation
+
+---
+
+## Importing a Python package
+
+<pre>
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0, 10, 100)
+plt.plot(x, np.sin(x), '-')
+plt.plot(x, np.cos(x), '--');
+</pre>
+
+![:scale 70%](img/sin_cos.jpg)
+
+---
+
+## Create your own module
+
+To create a module just save your code in a file with the file extension .py:
+
+For example, let's save a greeting function in a file named `mymodule.py`:
+
+<pre>
+def greeting(name):
+  print("Bona tarda senyor/a, " + name)
+</pre>
+
+Now we can load the module we just created from the Python terminal, by using the `import` statement:
+
+<pre>
+>>> import mymodule
+>>> mymodule.greeting("Xavi")
+Bona tarda senyor/a Xavi
+</pre>
+
+---
+
+
+## Concluding remarks (functions, modules and packages)
+
+* We can make our Python code more modular by defining **functions**
+
+* Python code developed for a particular purpose can be bundled
+  together into **modules**
+  
+* A Python file `.py` can be imported as a module
+
+* Modules that provide classes and functions to be reused, but that are not
+  supposed to be run as standalone applications are called 
+  **packages** or **libraries**
+  
+---
+
+## The numpy Python library 
+
 * The [numpy](https://numpy.org) library is a widely used Python library
   for performing numerical calculations with vectors (arrays) and matrices.  
   &nbsp;&nbsp;
-* To install the numpy library we can use the `pip`, or `pip3` tool:
+* To install the numpy library we can use the `pip` tool:
   <pre>
   $ pip install numpy
   </pre>
@@ -420,58 +445,78 @@ and storing it under the prefix `pt`.
   </pre>
   where the prefix `np` is the one typically used for the numpy library.
 
+![:scale 40%](img/numpy.png)
+
 ---
 
 ## Numeric vectors (1-d arrays) with numpy
 
 * A numpy array is a sequence of values of the same type, i.e., similar to
   the Python built-in `list` type but constraining the values to the same type.  
-  &nbsp;&nbsp;
+  
 * There are
   [multiple ways](https://numpy.org/doc/stable/user/basics.creation.html#arrays-creation)
   to create numpy arrays, here are some of them:
-  <pre>
-  >>> v = np.array([1, 2, 3, 4, 5])
-  >>> type(v)
-  &lt;class 'numpy.ndarray'&gt;
-  >>> v
-  array([1, 2, 3, 4, 5])
-  >>> v0s = np.zeros(10) ## 10 zeroes
-  >>> v0s
-  array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
-  >>> v0to9 = np.arange(10) ## half-open interval [0, 10)
-  >>> v0to9
-  array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-  >>> v0to1by01 = np.arange(0, 1.1, 0.1) ## [0, 1.1) steps of 0.1
-  >>> v0to1by01
-  array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
-  </pre>
+  
+Create an array with predefined values:
+<pre>
+>>> v = np.array([1, 2, 3, 4, 5])
+>>> type(v)
+&lt;class 'numpy.ndarray'&gt;
+>>> v
+array([1, 2, 3, 4, 5])
+</pre>
+
+Create an array of zeros:
+<pre>
+>>> x = np.zeros(10) ## 10 zeroes
+>>> x
+array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+</pre>
+  
+---
+
+## Numeric vectors (1-d arrays) with numpy
+
+Create a consecutive range of values:
+<pre>
+>>> x = np.arange(10)
+>>> x
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre>
+
+Create a consecutive range of values (with a step):
+<pre>
+>>> x = np.arange(0, 1.1, 0.1)
+>>> x
+array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
+</pre>
 
 ---
 
 ## Numeric vectors (1-d arrays) with numpy
 
-* The numpy library provides _vectorized_ operations over arrays.
-* Let's say we want to multiply the previous numpy array `v0to1by01` by
-  the number 10. This would be the classical (non-vectorized) operation:
+The numpy library provides _vectorized_ operations over arrays. For example, let's say we want to multiply a numpy array `x` by the number 10. 
+  
+* This would be the classical (non-vectorized) operation:
   <pre>
-   >>> v0to1by01
-  array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
+   >>> x
+  array([0. , 0.1, 0.2, 0.3, 0.4, 0.5 ])
   >>> i = 0
-  >>> v = np.zeros(len(v0to1by01))
-  >>> while (i < len(v0to1by01)) :
-  ...  v[i] = v0to1by01[i] * 10
+  >>> v = np.zeros(len(x))
+  >>> while (i < len(x)) :
+  ...  v[i] = x[i] * 10
   ...  i = i + 1
   >>> v
-  array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
+  array([ 0.,  1.,  2.,  3.,  4.,  5.])
   </pre>
+  
 * This is the vectorized operation with numpy:
   <pre>
-  >>> v = v0to1by01 * 10
+  >>> v = x * 10
   >>> v
-  array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
+  array([ 0.,  1.,  2.,  3.,  4.,  5.])
   </pre>
-
 
 ---
 
@@ -480,11 +525,11 @@ and storing it under the prefix `pt`.
 * Basic mathematical operations are _vectorized_ over arrays with numpy:
   <pre>
   >>> v
-  array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
+  array([ 0.,  1.,  2.,  3.,  4.,  5.])
   >>> sum(v)
   55.0
-  >>> v - v0to1by01
-  array([0. , 0.9, 1.8, 2.7, 3.6, 4.5, 5.4, 6.3, 7.2, 8.1, 9. ])
+  >>> v - x
+  array([0. , 0.9, 1.8, 2.7, 3.6, 4.5])
   </pre>
 * We can subset numpy arrays using integer ranges specified with colons `i:j`:
   <pre>
@@ -493,8 +538,8 @@ and storing it under the prefix `pt`.
   </pre>
 * We can also subset numpy arrays using arrays of truth values.
   <pre>
-  >>> v[v >= 5]
-  array([ 5.,  6.,  7.,  8.,  9., 10.])
+  >>> v[v >= 1]
+  array([ 1.,  2.,  3.,  4.,  5.])
   </pre>
 
 ---
@@ -596,6 +641,8 @@ is a two-dimensional array, where numbers are arranged in rows and columns.
   import pandas as pd
   </pre>
   where the prefix `pd` is the one typically used for the pandas library.
+
+![:scale 40%](img/pandas.png)
 
 ---
 
