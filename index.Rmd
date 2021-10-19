@@ -750,7 +750,7 @@ objects.
   >>> mask = dat["RESIDENCIA"] == "No"
   >>> mask.sum()
   231
-  >>> dat_general = dat.loc[mask, :]
+  >>> dat_general = dat\.loc[mask, :]
   >>> dat_general.shape
   (231, 15)
   </pre>
