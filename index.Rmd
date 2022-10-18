@@ -1,6 +1,6 @@
 ---
   title: "Programming with Python (2)"
-  author: Robert Castelo & Ricard Argelaguet
+  author: Robert Castelo
   output:
     xaringan::moon_reader:
       nature:
@@ -24,10 +24,9 @@ class: title-slide, middle, center
 
 # Programming with Python (2)
 
-## Robert Castelo & Ricard Argelaguet
+## Robert Castelo
 [robert.castelo@upf.edu](mailto:robert.castelo@upf.edu)
-[ricard.argelaguet@babraham.ac.uk](mailto:ricard.argelaguet@babraham.ac.uk)
-### Dept. of Experimental and Health Sciences
+### Dept. of Medicine & Life Sciences
 ### Universitat Pompeu Fabra
 
 <br>
@@ -35,7 +34,7 @@ class: title-slide, middle, center
 ## Fundamentals of Computational Biology
 ### BSc on Human Biology
 ### UPF School of Health and Life Sciences
-### Academic Year 2021-2022
+### Academic Year 2022-2023
 
 ---
 
@@ -398,7 +397,7 @@ plt.plot(x, np.cos(x), '--');
 * For example, let's save a greeting function in a file named `mymodule.py`:
   <pre>
   def greeting(name):
-    print("Bona tarda senyor/a, " + name)
+  &nbsp;&nbsp;&nbsp;&nbsp;print("Bona tarda senyor/a, " + name)
   </pre>
 * Now we can load the module we just created from the Python terminal, by using
   the `import` statement:
