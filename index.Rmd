@@ -131,6 +131,9 @@ while (i < 8) :
 &nbsp;&nbsp;
 print("there are %d nucleotides T" %(n))
 </pre>
+* Note that, in Python, character literals are enclosed by single quotes,
+  i.e., `'T'`, while character string literals are enclosed by double
+  quotes `"there are ..."`.
 
 ---
 
@@ -142,11 +145,15 @@ class: small-table
   DNA sequence. This requires comparing two consecutive positions in the
   vector, both of which should have the nucleotide `T`.  
   &nbsp;&nbsp;
+--
+
 * We can implement such a logic by nesting
   [conditional statements](https://en.wikipedia.org/wiki/Conditional_%28computer_programming%29).
   However, we can write more compact code with compound conditionals using
   [logical operators](https://en.wikipedia.org/wiki/Logical_connective).  
   &nbsp;&nbsp;
+
+--
 * In Python we have the following three logical operators:
 
 |   Operator          |  Type          | Description                   |
@@ -156,9 +163,8 @@ class: small-table
 |   `not` _cond_          |  negation      | True if operand is false      |
 * Here _cond_, _cond1_ and _cond2_ refer to logical conditions such as:
   <pre>
-  a == 2
-  v[i] == 'T'
   i < 10
+  v[i] == 'T'
   </pre>
 
 ---
@@ -178,6 +184,13 @@ while (i < len(v)) :
 &nbsp;
 print("there are %d dinucleotides TT" %(n))
 </pre>
+--
+
+* The previous implementation looks up whether a nucleotide is identical
+  to the previous one in the vector, think about what would be change in
+  the code to work looking up the next position, instead of the previous
+  one.
+
 
 ---
 
@@ -193,6 +206,9 @@ print("there are %d dinucleotides TT" %(n))
 * Looping over valid positions enables developing algorithms that
   can be re-used by replacing the values of the vector.  
   &nbsp;&nbsp;
+* When accessing simultaneously (e.g., for comparison) multiple positions
+  in a vector, i.e., `v[i+1], v[i+2], `etc., care must be taken to avoid
+  accessing positions outside the valid range.
 
 ---
 
@@ -256,18 +272,16 @@ print("there are %d dinucleotides TT" %(n))
     &nbsp;&nbsp;c=a+b
     &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
   </pre>  
-  &nbsp;&nbsp;
   <pre>
   >>> sum(3, 4)
   7
   </pre>
-  &nbsp;&nbsp;
+  &nbsp;
   <pre>
   <font style="color: darkblue; font-weight: bold">def</font> subtract(a, b):
     &nbsp;&nbsp;c=a-b
     &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> c
   </pre>  
-  &nbsp;&nbsp;
   <pre>
   >>> subtract(3, 4)
   -1
@@ -277,15 +291,17 @@ print("there are %d dinucleotides TT" %(n))
 
 ## Functions
 
-* Functions can be more complex...
+* Functions can be more complex. Let's make function that calculates the
+  arithmetic mean of the numerical values stored in a vector:
   <pre>
   <font style="color: darkblue; font-weight: bold">def</font> mean(v):
-    &nbsp; c = 0
-    &nbsp; i = len(v)-1
-    &nbsp; while i>=0:
-    &nbsp;&nbsp; c = c + v[i]
-    &nbsp;&nbsp; i = i - 1
-    &nbsp; mean = c / len(v)
+    &nbsp; s = 0
+    &nbsp; i = 0
+    &nbsp; while i < len(v):
+    &nbsp;&nbsp;&nbsp;&nbsp; s = s + v[i]
+    &nbsp;&nbsp;&nbsp;&nbsp; i = i + 1
+    &nbsp;
+    &nbsp; mean = s / len(v)
     &nbsp; <font style="color: darkblue; font-weight: bold">return</font> mean
   </pre>
   &nbsp;&nbsp;
@@ -298,37 +314,26 @@ print("there are %d dinucleotides TT" %(n))
 
 ## Functions
 
-* Functions can be more complex...
+* Functions can be even
+  [recursive](https://en.wikipedia.org/wiki/Recursion_%28computer_science%29).
+  For instance, to compute the sum of a
+  [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
   <pre>
   <font style="color: darkblue; font-weight: bold">def</font> Fibonacci(n):
-    &nbsp;&nbsp; if n < 0:
-    &nbsp;&nbsp;&nbsp;&nbsp;  print("Incorrect input")
-    &nbsp;&nbsp; elif n == 0:
-    &nbsp;&nbsp;&nbsp;&nbsp; return 0
+    &nbsp;&nbsp; if n == 0:
+    &nbsp;&nbsp;&nbsp;&nbsp; <font style="color: darkblue; font-weight: bold">return</font> 0
     &nbsp;&nbsp; elif n == 1 or n == 2:
-    &nbsp;&nbsp;&nbsp;&nbsp; return 1
+    &nbsp;&nbsp;&nbsp;&nbsp; <font style="color: darkblue; font-weight: bold">return</font> 1
     &nbsp;&nbsp; else:
     &nbsp;&nbsp;&nbsp;&nbsp; result = Fibonacci(n-1) + Fibonacci(n-2)
     &nbsp;&nbsp;&nbsp;&nbsp; <font style="color: darkblue; font-weight: bold">return</font> result
   </pre>
-  &nbsp&nbsp;
   <pre>
   >>> Fibonacci(9)
   34
   </pre>
-
----
-
-## How to execute Python code?
-
-There are two main ways in which you can run a Python program:
-
-1. From the Unix shell command line.
-  <pre>
-  >>> python script.py
-  </pre>
-2. Interactively, through the Python shell interpreter.
-  ![:scale 90%](img/python_interpreter.jpg)
+* Here we used the Python keyword `elif` to stack more than one alternative
+  condition to the `if` statement.
 
 ---
 
@@ -392,7 +397,7 @@ plt.plot(x, np.cos(x), '--');
 
 ## Create your own module
 
-* To create a module just save your code in a file with the file extension .py  
+* To create a module just save your code in a file with the file extension `.py`.  
   &nbsp;&nbsp;
 * For example, let's save a greeting function in a file named `mymodule.py`:
   <pre>
