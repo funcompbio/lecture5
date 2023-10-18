@@ -1750,7 +1750,7 @@ print(f&quot;there are {n} dinucleotides TT&quot;)
       &amp;nbsp;&amp;nbsp;self.x = x
       &amp;nbsp;&amp;nbsp;self.y = y
   &amp;nbsp;&amp;nbsp;&lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;def&lt;/font&gt; __repr__(self):
-      &amp;nbsp;&amp;nbsp;&lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;return&lt;/font&gt; f&quot;({self.x}, {self.y})&quot;
+      &amp;nbsp;&amp;nbsp;&lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;return&lt;/font&gt; f&quot;({self.x:.1f}, {self.y:.1f})&quot;
   &lt;/pre&gt;
 * We can now use this new _point_ data type in our Python code:
   &lt;pre&gt;
@@ -1878,7 +1878,7 @@ print(f&quot;there are {n} dinucleotides TT&quot;)
   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;self.x = x
   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;self.y = y
   &amp;nbsp;&amp;nbsp;&lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;def&lt;/font&gt; __repr__(self):
-  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;return&lt;/font&gt; f&quot;({self.x}, {self.y})&quot;
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;return&lt;/font&gt; f&quot;({self.x:.1f}, {self.y:.1f})&quot;
   &amp;nbsp;
   &lt;font style=&quot;color: darkblue; font-weight: bold&quot;&gt;def&lt;/font&gt; edist(pt1, pt2):
     &amp;nbsp;&amp;nbsp;dx=pt1.x-pt2.x ## distance of &#39;x&#39; between pt1 and pt2
