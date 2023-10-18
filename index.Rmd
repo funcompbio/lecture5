@@ -287,7 +287,7 @@ print(f"there are {n} dinucleotides TT")
       &nbsp;&nbsp;self.x = x
       &nbsp;&nbsp;self.y = y
   &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">def</font> __repr__(self):
-      &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> f"({self.x}, {self.y})"
+      &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> f"({self.x:.1f}, {self.y:.1f})"
   </pre>
 * We can now use this new _point_ data type in our Python code:
   <pre>
@@ -415,7 +415,7 @@ print(f"there are {n} dinucleotides TT")
   &nbsp;&nbsp;&nbsp;&nbsp;self.x = x
   &nbsp;&nbsp;&nbsp;&nbsp;self.y = y
   &nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">def</font> __repr__(self):
-  &nbsp;&nbsp;&nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> f"({self.x}, {self.y})"
+  &nbsp;&nbsp;&nbsp;&nbsp;<font style="color: darkblue; font-weight: bold">return</font> f"({self.x:.1f}, {self.y:.1f})"
   &nbsp;
   <font style="color: darkblue; font-weight: bold">def</font> edist(pt1, pt2):
     &nbsp;&nbsp;dx=pt1.x-pt2.x ## distance of 'x' between pt1 and pt2
