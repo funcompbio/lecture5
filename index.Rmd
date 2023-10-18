@@ -34,23 +34,29 @@ class: title-slide, middle, center
 ## Fundamentals of Computational Biology
 ### BSc on Human Biology
 ### UPF School of Health and Life Sciences
-### Academic Year 2022-2023
+### Academic Year 2023-2024
 
 ---
 
 ## Vectors
 
 * A vector, or [array](https://en.wikipedia.org/wiki/Array_data_structure) is a
-  type of object (variable) that can store more than one single value and allows
-  for an indexed access to its values.  
+  type of object (variable) that can store **more than one single value** and
+  allows for an indexed access to its values.  
   &nbsp;&nbsp;
+--
+
 * We can set a literal vector into a Python variable using an assignment:
   <pre>
   v = [1, 2, 3, 4, 5]
   </pre>
+--
+
 * We can access its values by referring to one of its **valid positions** in
   the vector.  
   &nbsp;&nbsp;
+--
+
 * Given a vector with $n$ elements, the **valid positions** of a vector in
   Python (and in many other programming languages) go from 0 to $n-1$, that is,
   positions follow a
@@ -78,20 +84,18 @@ Image adapted from [Comp 101 Arrays: Overview](https://comp101.org/topics/arrays
   v[i]
   v[i-1]
   </pre>
-<!-- * Vectors are containers for sequences of values contiguous in memory.   -->
-* Vectors in programming are analogous to vectors in
-  [mathematics and physics](https://en.wikipedia.org/wiki/Vector_%28mathematics_and_physics%29).  
+* Vectors are containers for sequences of values contiguous in memory.  
   &nbsp;&nbsp;
-<!-- * Filling up vectors with values enables re-using algorithms that operate -->
-<!--   on the vector space. This requires looping over valid positions of a vector. -->
+* Filling up vectors with values enables re-using algorithms that operate
+  on the vector space. This requires looping over valid positions of a vector.
 
 ---
 
 ## Looping over valid positions
 
-* Using an iterative statement, we generate a sequence of valid positions of
-  vector that enable looping over valid positions and consequently the access
-  to their associated values.
+* Using an iterative statement, we generate a sequence of non-negative integer
+  numbers that enable looping over the **valid positions** of the vector, and
+  consequently the access to their associated values.
 
 .left-column[
   <pre>
@@ -129,11 +133,15 @@ while (i < 8) :
 &nbsp;&nbsp;&nbsp;&nbsp;n = n + 1
 &nbsp;&nbsp;i = i + 1
 &nbsp;&nbsp;
-print("there are %d nucleotides T" %(n))
+print(f"there are {n} nucleotides T")
 </pre>
 * Note that, in Python, character literals are enclosed by single quotes,
   i.e., `'T'`, while character string literals are enclosed by double
-  quotes `"there are ..."`.
+  quotes `"there are ..."`.  
+  &nbsp;&nbsp;
+* The argument in the call to `print()` is a
+  [formatted string literal](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings),
+  which let us include the value of variables inside a string.
 
 ---
 
@@ -182,7 +190,7 @@ while (i < len(v)) :
 &nbsp;&nbsp;&nbsp;&nbsp;n = n + 1
 &nbsp;&nbsp;i = i + 1
 &nbsp;
-print("there are %d dinucleotides TT" %(n))
+print(f"there are {n} dinucleotides TT")
 </pre>
 --
 
@@ -200,15 +208,18 @@ print("there are %d dinucleotides TT" %(n))
   &nbsp;&nbsp;
 * Values in a vector are accessed by their position in the vector.  
   &nbsp;&nbsp;
-* Valid positions in a vector in Python start at 0 and consequently end
+* **Valid positions** in a vector in Python start at 0 and consequently end
   at the number of elements minus one.  
   &nbsp;&nbsp;
-* Looping over valid positions enables developing algorithms that
+* Looping over **valid positions** enables developing algorithms that
   can be re-used by replacing the values of the vector.  
   &nbsp;&nbsp;
 * When accessing simultaneously (e.g., for comparison) multiple positions
   in a vector, i.e., `v[i+1], v[i+2], `etc., care must be taken to avoid
-  accessing positions outside the valid range.
+  accessing positions outside the valid range.  
+  &nbsp;&nbsp;
+* Vectors in programming are analogous to vectors in
+  [mathematics and physics](https://en.wikipedia.org/wiki/Vector_%28mathematics_and_physics%29).  
 
 ---
 
@@ -267,7 +278,7 @@ print("there are %d dinucleotides TT" %(n))
 ## Extending data types through Python classes
 
 * You can extend the available data types by using so-called
-  [_object classes_](https://docs.python.org/3/tutorial/classes.html).
+  [object classes](https://docs.python.org/3/tutorial/classes.html).
   &nbsp;&nbsp;
 * Let's define a new _point_ data type:
   <pre>
@@ -485,12 +496,11 @@ and storing it under the prefix `pt`.
   * `math`: for mathematical operations.
   * `numpy`: scientific computation.
   * `sys`: system-specific parameters and functions.
-  * `pandas`: data analysis and manipulation.
+  * `pandas`: data analysis and manipulation.  
 * Python packages need to be _installed_ before the can be _used_. There are
   different ways to install Python packages, one of them is using the `pip`,
   or `pip3`, command. For instance, this is how we would install the `numpy`
   and `matplotlib` packages:
-
   <pre>
   $ pip install numpy
   $ pip install matplotlib
@@ -543,7 +553,7 @@ plt.plot(x, np.cos(x), '--');
 
 * We can make our Python code more modular by defining **functions**.  
   &nbsp;&nbsp;
-* Python built-in data types can be extended by defining new _classes_
+* Python built-in data types can be extended by defining new **classes**
   of objects.  
   &nbsp;&nbsp;
 * Python code developed for a particular purpose can be bundled

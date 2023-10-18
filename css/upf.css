@@ -10,7 +10,7 @@ ul{margin:1em 0;padding:0 0 0 1em}
 img{vertical-align:top;max-height:600px;margin:0 auto 1em;display:block}
 hr{height:0;margin:1em 0;border:0;border-top:1px solid #cccccc}
 h1,h2,h3,h4,h5,h6{font-weight:500;margin:1em 0 0.5em}
-b,strong{font-weight:500}
+b,strong{font-weight:600}
 blockquote{border-left:5px solid #cccccc;padding-left:1em;margin:1em -1em;font-style:italic;color:#999999}
 /*.remark-slide-number{display:none}*/
 .remark-slide{display:table}
@@ -23,7 +23,7 @@ blockquote{border-left:5px solid #cccccc;padding-left:1em;margin:1em -1em;font-s
 .remark-slide-content h6{font-size:20px;color:#00989e}
 .remark-slide-content>:first-child{margin-top:0}
 .remark-slide-content>:last-child{margin-bottom:0}
-.remark-code-line{white-space:normal;background-color:#000;border:1px solid #000;color:#fff;padding:0 1em;font-size:70%}
+.remark-code-line{white-space:normal;background-color:#000;border:1px solid #000;color:#fff;padding:0 1em}
 .remark-slide-content:after {
     content: "";
     position: absolute;
@@ -91,7 +91,7 @@ blockquote{border-left:5px solid #cccccc;padding-left:1em;margin:1em -1em;font-s
   display: table;
 }
 
-/* reduze font size in tables */
+/* reduce font size in tables */
 .small-table td {
   font-size: 70%;
   font-family: courier;
@@ -108,4 +108,14 @@ blockquote{border-left:5px solid #cccccc;padding-left:1em;margin:1em -1em;font-s
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* 14px font in slide */
+.font14px {
+  font-size: 14px;
+}
+
+/* 18px font in slide */
+.font18px {
+  font-size: 18px;
 }
