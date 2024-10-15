@@ -5,6 +5,7 @@
     xaringan::moon_reader:
       nature:
         beforeInit: js/macros.js
+        countIncrementalSlides: false
       self_contained: true
       css: [default, default-fonts, ninjutsu, css/upf.css]
       seal: false
@@ -33,9 +34,13 @@ class: title-slide, middle, center
 
 ## Fundamentals of Computational Biology
 ### BSc on Human Biology
-### UPF School of Health and Life Sciences
-### Academic Year 2023-2024
+### UPF School of Medicine and Life Sciences
+### Academic Year 2024-2025
 
+---
+class: center, middle, inverse
+
+# Vectors and their range of valid positions
 ---
 
 ## Vectors
@@ -222,6 +227,11 @@ print(f"there are {n} dinucleotides TT")
   [mathematics and physics](https://en.wikipedia.org/wiki/Vector_%28mathematics_and_physics%29).  
 
 ---
+class: center, middle, inverse
+
+# Built-in data types and object classes
+
+---
 
 ## Python built-in data types
 
@@ -275,7 +285,7 @@ print(f"there are {n} dinucleotides TT")
 
 ---
 
-## Extending data types through Python classes
+## Extending data types through object classes
 
 * You can extend the available data types by using so-called
   [object classes](https://docs.python.org/3/tutorial/classes.html).
@@ -305,6 +315,11 @@ print(f"there are {n} dinucleotides TT")
   [inheritance](https://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29)
   and
   [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29).
+
+---
+class: center, middle, inverse
+
+# Functions
 
 ---
 
@@ -357,7 +372,7 @@ print(f"there are {n} dinucleotides TT")
 
 ## Bundling lines together into functions
 
-* Functions can be more complex. Let's make function that calculates the
+* Functions can be more complex. Let's write a function that calculates the
   arithmetic mean of the numerical values stored in a vector:
   <pre>
   <font style="color: darkblue; font-weight: bold">def</font> mean(v):
@@ -400,6 +415,11 @@ print(f"there are {n} dinucleotides TT")
   </pre>
 * Here we used the Python keyword `elif` to stack more than one alternative
   condition to the `if` statement.
+
+---
+class: center, middle, inverse
+
+# Modules
 
 ---
 
@@ -470,13 +490,11 @@ and storing it under the prefix `pt`.
   >>> math.sqrt(3)
   3.0
   </pre>
-
   <pre>
   >>> import math as m
   >>> m.sqrt(3)
   3.0
   </pre>
-
   <pre>
   >>> from math import sqrt
   >>> sqrt(3)
@@ -493,14 +511,17 @@ and storing it under the prefix `pt`.
   &nbsp;&nbsp;
 * Commonly used Python packages:
   * `matplotlib`: for plotting.
-  * `math`: for mathematical operations.
+  * `math`: for mathematical operations (installed by default).
   * `numpy`: scientific computation.
-  * `sys`: system-specific parameters and functions.
+  * `sys`: system-specific parameters and functions (installed by default).
   * `pandas`: data analysis and manipulation.  
-* Python packages need to be _installed_ before the can be _used_. There are
-  different ways to install Python packages, one of them is using the `pip`,
-  or `pip3`, command. For instance, this is how we would install the `numpy`
-  and `matplotlib` packages:
+* Many packages are part of the so-called
+  [Python standard library](https://docs.python.org/3/library/index.html),
+  installed by default. However, many others may need to be _installed_
+  before they can be _used_. You can browse them at the
+  [Python Package Index](https://pypi.org). There are different ways to install
+  Python packages, one of them is using the `pip`, or `pip3`, command. For
+  instance, this is how we would install the `numpy` and `matplotlib` packages:
   <pre>
   $ pip install numpy
   $ pip install matplotlib
@@ -521,6 +542,27 @@ plt.plot(x, np.cos(x), '--');
 </pre>
 
 ![:scale 70%](img/sin_cos.jpg)
+
+---
+
+## Concluding remarks (classes, functions, modules)
+
+* We can make our Python code more modular by defining **functions**.  
+  &nbsp;&nbsp;
+* Python built-in data types can be extended by defining new **classes**
+  of objects.  
+  &nbsp;&nbsp;
+* Python code developed for a particular purpose can be bundled
+  together into **modules**.  
+  &nbsp;&nbsp;
+* Modules that provide classes and functions to be reused, but that are not
+  supposed to be run as standalone applications are called 
+  **packages** or **libraries**.  
+
+---
+class: center, middle, inverse
+
+# Non-interactive execution
 
 ---
 
@@ -549,20 +591,14 @@ plt.plot(x, np.cos(x), '--');
 
 ---
 
-## Concluding remarks (classes, functions, modules)
+## Concluding remarks (non-interactive execution)
 
-* We can make our Python code more modular by defining **functions**.  
-  &nbsp;&nbsp;
-* Python built-in data types can be extended by defining new **classes**
-  of objects.  
-  &nbsp;&nbsp;
-* Python code developed for a particular purpose can be bundled
-  together into **modules**.  
-  &nbsp;&nbsp;
-* Modules that provide classes and functions to be reused, but that are not
-  supposed to be run as standalone applications are called 
-  **packages** or **libraries**.  
+* Being able to execute Python programs non-interactively allows one
+  to automatize workflows involving the execution of multiple programs.  
   &nbsp;&nbsp;
 * Using the `sys` module and the Python variable `__name__`, we can
-  enable our Python programs to take arguments from the command line.
+  enable our Python programs to take arguments from the command line.  
+  &nbsp;&nbsp;
+* The `sys` module puts into a vector called `sys.argv` the arguments
+  given in the command line.
 
