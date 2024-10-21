@@ -197,6 +197,8 @@ while (i < len(v)) :
 &nbsp;
 print(f"there are {n} dinucleotides TT")
 </pre>
+where the function `len(v)` returns the number of elements of the vector `v`.  
+&nbsp;&nbsp;
 --
 
 * The previous implementation looks up whether a nucleotide is identical
