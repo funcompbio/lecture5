@@ -23,7 +23,8 @@ blockquote{border-left:5px solid #cccccc;padding-left:1em;margin:1em -1em;font-s
 .remark-slide-content h6{font-size:20px;color:#00989e}
 .remark-slide-content>:first-child{margin-top:0}
 .remark-slide-content>:last-child{margin-bottom:0}
-.remark-code-line{white-space:normal;background-color:#000;border:1px solid #000;color:#fff;padding:0 1em}
+/*.remark-code-line{white-space:normal;background-color:#000;border:1px solid #000;color:#fff;padding:0 1em}*/
+.remark-code-line{white-space:normal;background-color:#fff;border:0px solid #000;color:#000;padding:0 1em}
 .remark-slide-content:after {
     content: "";
     position: absolute;
