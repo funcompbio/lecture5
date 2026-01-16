@@ -33,9 +33,9 @@ class: title-slide, middle, center
 <br>
 
 ## Fundamentals of Computational Biology
-### BSc on Human Biology
+### BSc in Biomedical Sciences
 ### UPF School of Medicine and Life Sciences
-### Academic Year 2024-2025
+### Academic Year 2025-2026
 
 ---
 class: center, middle, inverse
@@ -67,10 +67,6 @@ class: center, middle, inverse
   positions follow a
   [zero-based numbering](https://en.wikipedia.org/wiki/Zero-based_numbering).
 ![:scale 40%](img/dozeneggs.jpg)
-
-.footer[
-Image adapted from [Comp 101 Arrays: Overview](https://comp101.org/topics/arrays/arrays-overview).
-]
 
 ---
 
